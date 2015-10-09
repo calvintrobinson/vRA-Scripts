@@ -27,10 +27,10 @@ extents=$(/sbin/vgdisplay vg_root|grep "Free  PE" |awk '{print $5}')
 #CREATE NEW LOGICAL VOLUME
 /sbin/lvcreate --extents $extents -n $LVNAME $VGNAME
 
-#FORMAT THE NEW LOGICAL VOLUME
+#ADD EXT4 FILESYSTEM TO NEW LOGICAL VOLUME
 mkfs.ext4 /dev/$VGNAME/$LVNAME
 
-#CREATE THE FOLDER WHERE THE NEW LOGICAL VOLUME WILL BE MOUNTED
+#CREATE THE DIRECTORY WHERE THE NEW LOGICAL VOLUME WILL BE MOUNTED
 /bin/mkdir /data
 
 #BACKUP /ETC/FSTAB
@@ -39,7 +39,7 @@ cp -p /etc/fstab /etc/fstab.$date
 #CREATE FSTAB ENTRY
 echo "/dev/mapper/vg_root-lv_data /data                         ext4    noatime,nodiratime      1 1" >> /etc/fstab
 
-#mount /data
+#CLEANUP TASK
 rm -rf /var/tmp/lvm.sh
 
         echo "/dev/sdb1 formatted and added to vg-root volume group" > /var/tmp/lvm.log
