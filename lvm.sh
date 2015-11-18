@@ -4,8 +4,8 @@
 #and added to an existing volume group
 
 # Informational only - Arguments which are needed in vRA IF other values should be passed for 
-# vg and lv.  We have these values fixed at this time to maintain DoITT standards
-# $1 = Volume Group Name (vg_root), $2 = Logical Volume Name (lv_data)
+# vg and lv.  We have these values fixed at this time to maintain client standards
+# vRA inputs reference - - > $1 = Volume Group Name (vg_root), $2 = Logical Volume Name (lv_data)
 
 drive=sdb
 VGNAME=vg_root
