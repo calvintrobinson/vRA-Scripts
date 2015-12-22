@@ -53,7 +53,7 @@ fi
 echo $db_name successfully compressed and saved as $backup_dir$db_name.bz2 >> $backup_log
 
 
-#Pruning Step
+#Pruning Step here.  Let's delete any logs and bzip files older than N number of days.  
 find $backup_dir -type f -mtime +$number_of_days -delete
 
 #We will start the service here
