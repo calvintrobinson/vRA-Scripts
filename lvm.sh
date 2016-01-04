@@ -49,7 +49,7 @@ rm -rf /var/tmp/lvm.sh
 exit 0
 
 else
-        /bin//bin/echo "No /dev/sdb drive included during request time" > /var/tmp/lvm.log
+        /bin/echo "No /dev/sdb drive included during request time" > /var/tmp/lvm.log
 exit 0
 
 fi
